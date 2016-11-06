@@ -1,4 +1,4 @@
-//! @file Character.h
+//! @file Character.cpp
 //! @author Patrick Nicoll 27218729
 //! @brief Implementation of the class representing an instance of a character
 

@@ -1,3 +1,7 @@
+//! @file COMP345DnD.cpp
+//! @author Patrick Nicoll 27218729
+//! @brief Class that contains the main method of the project
+
 #include "stdafx.h"
 #include "Game.h"
 #include "TestUnit.h"

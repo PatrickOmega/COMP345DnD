@@ -1,4 +1,4 @@
-//! @file Fighter.h
+//! @file Fighter.cpp
 //! @author Patrick Nicoll
 //! @brief Implementation of the character type fighter.
 

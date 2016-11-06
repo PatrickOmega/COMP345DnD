@@ -1,9 +1,16 @@
+//! @file Game.cpp
+//! @author Patrick Nicoll
+//! @brief Implementation of the game class, will control the main game loop and Draw/Update cycle
+
 #include "stdafx.h"
 #include "Game.h"
 #include "Character.h"
 #include <iostream>
 #include <string>
 
+//! Constructor
+//! @param screenWidth	Width of game window
+//! @param screenHeight	Height of game window
 Game::Game(int screenWidth, int screenHeight)
 {
 	quit = false;
@@ -18,7 +25,10 @@ Game::Game(int screenWidth, int screenHeight)
 		quit = true;
 	}
 
+	//Create main character
 	myCharacter = new Character(10);
+
+	//Create setup object
 	setup = new SDLSetup(&quit, screenWidth, screenHeight);
 	
 	//Set up for character hp text sprite
@@ -37,6 +47,7 @@ Game::Game(int screenWidth, int screenHeight)
 }
 
 
+//! Destructor
 Game::~Game()
 {
 	delete myCharacter;
@@ -48,6 +59,7 @@ Game::~Game()
 	SDL_Quit();
 }
 
+//! Contains main game loop
 void Game::GameLoop()
 {
 	while (!quit && setup->GetEvent()->type != SDL_QUIT) {
@@ -70,6 +82,9 @@ void Game::GameLoop()
 		setup->End();
 	}
 }
+
+//! Driver method used for test purposes. Contains similar logic to the main game loop method
+//! @param amountHit	Accepts an integer for the amount of damage that should be done per trigger
 void Game::DriverGameLoop(int amountHit)
 {
 	while (!quit && setup->GetEvent()->type != SDL_QUIT) {

@@ -1,7 +1,19 @@
+//! @file TextSprite.cpp
+//! @author Patrick Nicoll 27218729
+//! @brief Implementation for a text sprite creation class
+
 #include "stdafx.h"
 #include "TextSprite.h"
 #include <iostream>
 
+//! Constructor
+//! @param renderer	Renderer object
+//! @param quit	Boolean representing whether the user has quit the game or not
+//! @param textContent	Message to be displayed on screen
+//! @param textFont	Font of the message
+//! @param textColor	Color of the text
+//! @param x	X Position of the text sprite
+//! @param y	Y Position of the text sprite
 TextSprite::TextSprite(SDL_Renderer* renderer, bool* quit, std::string textContent,TTF_Font* textFont, SDL_Color textColor, int x, int y)
 {
 	this->x = x;
@@ -39,6 +51,7 @@ TextSprite::TextSprite(SDL_Renderer* renderer, bool* quit, std::string textConte
 }
 
 
+//! Destructor
 TextSprite::~TextSprite()
 {
 	TTF_CloseFont(font);
@@ -46,6 +59,7 @@ TextSprite::~TextSprite()
 	SDL_FreeSurface(surface);
 }
 
+//! Method to draw the sprite on the screen
 void TextSprite::Draw()
 {
 	surface = TTF_RenderText_Solid(font, text.c_str(), color);
